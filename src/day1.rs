@@ -49,7 +49,6 @@ Equipped with this new information, you now need to find the real first and last
 #[derive(Debug)]
 struct Found {
     at: usize,
-    lit: String,
     as_num: String,
 }
 
@@ -69,7 +68,6 @@ fn part_2() {
                 if ch as u8 >= b'0' && ch as u8 <= b'9' {
                     result.push(Found {
                         at,
-                        lit: ch.to_string(),
                         as_num: ch.to_string(),
                     })
                 }
@@ -80,10 +78,9 @@ fn part_2() {
         let word_numbers = {
             let mut result = vec![];
             for (key, word) in words.iter().enumerate() {
-                for (at, word) in line.match_indices(word) {
+                for (at, _) in line.match_indices(word) {
                     result.push(Found {
                         at,
-                        lit: word.to_string(),
                         as_num: (key + 1).to_string(),
                     });
                 }
