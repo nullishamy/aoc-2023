@@ -18,23 +18,24 @@ On each line, the calibration value can be found by combining the first digit an
 
 #[test]
 fn part_1() {
-    let input = include_str!("./day1.input");
-    let mut sum = 0;
+    let input = include_str!("day1.input");
 
-    for line in input.lines() {
-        let numbers_in_line = line
-            .chars()
-            .map(|c| c as u8)
-            .filter(|c| *c >= b'0' && *c <= b'9')
-            .map(|c| c as char)
-            .collect::<Vec<_>>();
+    let sum = input
+        .lines()
+        .map(|line| {
+            let numbers_in_line = line
+                .chars()
+                .map(|c| c as u8)
+                .filter(|c| *c >= b'0' && *c <= b'9')
+                .map(|c| c as char)
+                .collect::<Vec<_>>();
 
-        let first = *numbers_in_line.first().unwrap();
-        let last = *numbers_in_line.last().unwrap();
+            let first = *numbers_in_line.first().unwrap();
+            let last = *numbers_in_line.last().unwrap();
 
-        let numeric = format!("{}{}", first, last).parse::<u32>().unwrap();
-        sum += numeric;
-    }
+            format!("{}{}", first, last).parse::<u64>().unwrap()
+        })
+        .sum::<u64>();
 
     assert_eq!(sum, 54390);
 }
