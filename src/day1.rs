@@ -1,3 +1,5 @@
+mod aoc;
+
 /*
 --- Day 1: Trebuchet?! ---
 Something is wrong with global snow production, and you've been selected to take a look. The Elves have even given you a map; on it, they've used stars to mark the top fifty locations that are likely to be having problems.
@@ -18,10 +20,9 @@ On each line, the calibration value can be found by combining the first digit an
 
 #[test]
 fn part_1() {
-    let input = include_str!("day1.input");
+    let input = input!("day1.input");
 
     let sum = input
-        .lines()
         .map(|line| {
             let numbers_in_line = line
                 .chars()
@@ -55,14 +56,14 @@ struct Found {
 
 #[test]
 fn part_2() {
-    let input = include_str!("./day1.input");
+    let input = input!("./day1.input");
     let words = [
         "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
     ];
 
     let mut sum = 0;
 
-    for line in input.lines() {
+    for line in input {
         let literal_numbers = {
             let mut result = vec![];
             for (at, ch) in line.char_indices() {

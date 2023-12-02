@@ -1,3 +1,5 @@
+mod aoc;
+
 /*
 --- Day 2: Cube Conundrum ---
 You're launched high into the atmosphere! The apex of your trajectory just barely reaches the surface of a large island floating in the sky. You gently land in a fluffy pile of leaves. It's quite cold, but you don't see much snow. An Elf runs over to greet you.
@@ -98,9 +100,9 @@ fn parse_game(line: &str) -> Game {
 
 #[test]
 fn part_1() {
-    let input = include_str!("./day2.input");
+    let input = input!("./day2.input");
 
-    let games = input.lines().map(parse_game).collect::<Vec<_>>();
+    let games = input.map(parse_game).collect::<Vec<_>>();
 
     let possible_games = games
         .iter()
@@ -138,9 +140,9 @@ In game 1, the game could have been played with as few as 4 red, 2 green, and 6 
 */
 #[test]
 fn part_2() {
-    let input = include_str!("./day2.input");
+    let input = input!("./day2.input");
 
-    let games = input.lines().map(parse_game).collect::<Vec<_>>();
+    let games = input.map(parse_game).collect::<Vec<_>>();
 
     let lowest_possible_rounds = games
         .iter()
