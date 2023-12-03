@@ -11,3 +11,11 @@ edition = "2021"
 [[test]]
 name = "day_1"
 path = "src/day1.rs"
+
+[[test]]
+name = "day_2"
+path = "src/day2.rs"
+
+[[test]]
+name = "day_3"
+path = "src/day3.rs"
