@@ -102,7 +102,7 @@ fn parse_game(line: &str) -> Game {
 fn part_1() {
     let input = input!("./day2.input");
 
-    let games = input.map(parse_game).collect::<Vec<_>>();
+    let games = input.lines().map(parse_game).collect::<Vec<_>>();
 
     let possible_games = games
         .iter()
@@ -142,7 +142,7 @@ In game 1, the game could have been played with as few as 4 red, 2 green, and 6 
 fn part_2() {
     let input = input!("./day2.input");
 
-    let games = input.map(parse_game).collect::<Vec<_>>();
+    let games = input.lines().map(parse_game).collect::<Vec<_>>();
 
     let lowest_possible_rounds = games
         .iter()

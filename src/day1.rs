@@ -23,6 +23,7 @@ fn part_1() {
     let input = input!("day1.input");
 
     let sum = input
+        .lines()
         .map(|line| {
             let numbers_in_line = line
                 .chars()
@@ -63,7 +64,7 @@ fn part_2() {
 
     let mut sum = 0;
 
-    for line in input {
+    for line in input.lines() {
         let literal_numbers = {
             let mut result = vec![];
             for (at, ch) in line.char_indices() {

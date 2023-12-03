@@ -2,12 +2,12 @@
 macro_rules! input {
     // Include the real input
     ($path: literal) => {
-        include_str!($path).lines()
+        include_str!($path)
     };
 
     // Use the sample
     ($path: literal, $sample: expr) => {
-        $sample.iter()
+        $sample
     };
 
     // Use the real input, but with the sample expression provided
